@@ -9,19 +9,21 @@ public class InputMain {
 		boolean b = true;
 		int i = 0;
 		String j = null;
+		Scanner s = new Scanner(System.in);
 		while(b) {
 			try {
 				System.out.print("番号入力：");
-				i = new Scanner(System.in).nextInt();
+				i =s.nextInt();
 				break;
 			}catch(InputMismatchException e) {
+				s.next();
 				System.out.println("数値を入力してください。");
-				continue;
 			}
 		}
 		System.out.print("名前入力：");
-		j = new Scanner(System.in).next();
+		j = s.next();
 		System.out.println("番号は「" + i + "」、名前は「" + j + "」さんですね。");
+		s.close();
 	}
 }
 
